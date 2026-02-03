@@ -1,0 +1,89 @@
+.todo-item {
+    background: #dfe4fa;
+    border: 2px solid #a0b4f1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  /* Text */
+  .todo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .todo-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .todo-description {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  /* Status badge */
+  .todo-status {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    border: 1px solid transparent;
+  }
+  
+  .todo-status.NOT_STARTED {
+    background: #fde2e2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+  }
+  
+  .todo-status.IN_PROGRESS {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fcd34d;
+  }
+  
+  .todo-status.DONE {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #86efac;
+  }
+  
+  /* Actions */
+  .todo-item-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  /* Select */
+  .todo-item-actions select {
+    padding: 0.4rem 0.5rem;
+    border-radius: 8px;
+    border: 1.5px solid #a0b4f1;
+    background: white;
+    color: #000;
+  }
+  
+  /* Button */
+  .todo-item-actions button {
+    background: #a0b4f1;
+    color: #000;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+  }
+  
+  .todo-item-actions button:hover {
+    background: #8fa5ee;
+  }
+  
+  /* Visually hidden label (accessibility) */
+  .visually-hidden {
+    position: absolute;
+    left: -9999px;
+  }
+  
