@@ -1,13 +1,19 @@
-import { useState } from "react"
+import { useId, useState } from "react"
 import type { TodoStatus } from "../interfaces/Todo"
 import "./TodoForm.css"
 
-// Function component for the Todo form 
+// Function component for the Todo form
 export default function TodoForm({ onAdd }: any) {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [status, setStatus] = useState<TodoStatus>("NOT_STARTED")
   const [error, setError] = useState("")
+
+  // Unique IDs for form elements
+  const titleId = useId()
+  const descriptionId = useId()
+  const statusId = useId()
+  const errorId = useId()
 
   // Handle form submission
   function submit(e: React.FormEvent) {
@@ -44,37 +50,40 @@ export default function TodoForm({ onAdd }: any) {
     <form className="todo-form" onSubmit={submit}>
       <h2 className="todo-form-title">Add new todo</h2>
 
-      <label>
-        Title
-        <input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Title"
-        />
-      </label>
+      <label htmlFor={titleId}>Title</label>
+      <input
+        id={titleId}
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Title"
+        aria-describedby={error ? errorId : undefined}
+      />
 
-      <label>
-        Description
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Description (optional)"
-        />
-      </label>
+      <label htmlFor={descriptionId}>Description</label>
+      <textarea
+        id={descriptionId}
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Description (optional)"
+        aria-describedby={error ? errorId : undefined}
+      />
 
-      <label>
-        Status
-        <select
-          value={status}
-          onChange={(e) => setStatus(e.target.value as TodoStatus)}
-        >
-          <option value="NOT_STARTED">Not started</option>
-          <option value="IN_PROGRESS">Ongoing</option>
-          <option value="DONE">Completed</option>
-        </select>
-      </label>
+      <label htmlFor={statusId}>Status</label>
+      <select
+        id={statusId}
+        value={status}
+        onChange={(e) => setStatus(e.target.value as TodoStatus)}
+      >
+        <option value="NOT_STARTED">Not started</option>
+        <option value="IN_PROGRESS">Ongoing</option>
+        <option value="DONE">Completed</option>
+      </select>
 
-      {error && <p className="todo-form-error">{error}</p>}
+      {error && (
+        <p id={errorId} className="todo-form-error" role="alert">
+          {error}
+        </p>
+      )}
 
       <button type="submit">Add</button>
     </form>
