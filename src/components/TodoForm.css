@@ -1,0 +1,58 @@
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .todo-form-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  /* Labels */
+  .todo-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-weight: 500;
+  }
+  
+  /* Inputs, textarea and select */
+  .todo-form input,
+  .todo-form textarea,
+  .todo-form select {
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1.5px solid #a0b4f1;
+    font-size: 1rem;
+    background: white;
+    color: #000000;
+    margin-bottom: 0.5rem;
+  }
+  
+  .todo-form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  /* Error */
+  .todo-form-error {
+    color: #b00020;
+    font-size: 0.9rem;
+  }
+  
+  /* Button */
+  .todo-form button {
+    background: #a0b4f1;
+    color: #000000;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .todo-form button:hover {
+    background: #8fa5ee;
+  }
+  
