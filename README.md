@@ -6,7 +6,7 @@ Denna laboration handlar om att skapa en att göra lista (todo-list) applikation
 
 ## Publicerad webbplats
 
-Länk till publicerad webbplats via Netlify: [Todo-list](https://).
+Länk till publicerad webbplats via Netlify: [Todo-list](https://todolist-moment2.netlify.app/).
 
 ---
 
