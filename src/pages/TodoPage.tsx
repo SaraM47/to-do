@@ -25,7 +25,7 @@ function TodoPage() {
       const data = await getTodos()
       setTodos(data)
     } catch {
-      setError("Kunde inte hämta todos")
+      setError("Could not retrieve todos")
     } finally {
       setLoading(false)
     }
